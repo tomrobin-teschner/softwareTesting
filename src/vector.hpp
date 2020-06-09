@@ -10,8 +10,12 @@ public:
   using VectorType = std::vector<double>;
 
 public:
+  Vector() = default;
   Vector(const VectorType &inputVector);
+
   void transpose();
+
+  Vector operator+(const Vector &other);
 
   const double &operator()(int index) const;
   Vector &operator*(const double &scaleFactor);
