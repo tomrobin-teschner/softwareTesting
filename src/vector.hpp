@@ -16,6 +16,7 @@ public:
   void transpose();
 
   Vector operator+(const Vector &other);
+  Vector operator-(const Vector &other);
 
   const double &operator()(int index) const;
   Vector &operator*(const double &scaleFactor);

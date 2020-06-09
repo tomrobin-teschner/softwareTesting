@@ -17,3 +17,11 @@ vectorAdditionTest = executable(
   include_directories: root
 )
 test('vector: vector addition', vectorAdditionTest)
+
+vectorSubtractionTest = executable(
+  'vectorSubtractionTest',
+  'vectorSubtractionTest.cpp',
+  link_with: linear_algebra_lib,
+  include_directories: root
+)
+test('vector: vector subtraction', vectorSubtractionTest)
