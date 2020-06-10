@@ -3,7 +3,8 @@ root = '../'
 
 # add source files
 cppSourceFiles = [
-  'vector.cpp'
+  'vector.cpp',
+  'matrix.cpp'
 ]
 
 # create static library of all cppSourceFiles which allows to easily include them in tests
