@@ -10,6 +10,14 @@ scalarVectorMultiplicationTest = executable(
 )
 test('vector: scalar vector multiplication', scalarVectorMultiplicationTest)
 
+vectorVectorMultiplicationTest = executable(
+  'vectorVectorMultiplicationTest',
+  'vectorVectorMultiplicationTest.cpp',
+  link_with: linear_algebra_lib,
+  include_directories: root
+)
+test('vector: vector vector multiplication', vectorVectorMultiplicationTest)
+
 vectorAdditionTest = executable(
   'vectorAdditionTest',
   'vectorAdditionTest.cpp',

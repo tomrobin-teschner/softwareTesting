@@ -13,13 +13,13 @@ public:
   Vector() = default;
   Vector(const VectorType &inputVector);
 
-  void transpose();
-
-  Vector operator+(const Vector &other);
-  Vector operator-(const Vector &other);
+  Vector &transpose();
 
   const double &operator()(int index) const;
+  Vector operator+(const Vector &other);
+  Vector operator-(const Vector &other);
   Vector &operator*(const double &scaleFactor);
+  double operator*(const Vector &other);
   friend Vector &operator*(const double &scaleFactor, Vector vector);
 
 private:

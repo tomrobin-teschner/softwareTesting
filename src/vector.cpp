@@ -6,8 +6,9 @@ namespace LinearAlgebra {
 
 Vector::Vector(const Vector::VectorType &inputVector) : vector_(inputVector) { }
 
-void Vector::transpose() {
+Vector &Vector::transpose() {
   isRowVector_ = isRowVector_ == true ? false : true;
+  return *this;
 }
 
 Vector Vector::operator+(const Vector &other) {
@@ -36,6 +37,14 @@ Vector &Vector::operator*(const double &scaleFactor) {
   for (auto &vectorComponent : vector_)
     vectorComponent *= scaleFactor;
   return *this;
+}
+
+double Vector::operator*(const Vector &other) {
+  assert(isRowVector_ && !other.isRowVector_ && "first vector must be a row vector, second must be a column vector");
+  double sum = 0.0;
+  for (unsigned i = 0; i < vector_.size(); ++i)
+    sum += vector_[i] * other.vector_[i];
+  return sum;
 }
 
 Vector &operator*(const double &scaleFactor, Vector vector) {
