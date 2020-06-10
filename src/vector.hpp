@@ -3,6 +3,8 @@
 
 #include <vector>
 
+#include "src/matrix.hpp"
+
 namespace LinearAlgebra {
 
 class Vector {
@@ -21,6 +23,7 @@ public:
   Vector &operator*(const double &scaleFactor);
   double operator*(const Vector &other);
   friend Vector &operator*(const double &scaleFactor, Vector vector);
+  friend Vector operator*(const Matrix &matrix, const Vector &vector);
 
 private:
   VectorType vector_;

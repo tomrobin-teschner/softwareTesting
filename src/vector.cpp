@@ -1,5 +1,6 @@
 #include <cassert>
 
+#include "src/matrix.hpp"
 #include "src/vector.hpp"
 
 namespace LinearAlgebra {
@@ -49,6 +50,19 @@ double Vector::operator*(const Vector &other) {
 
 Vector &operator*(const double &scaleFactor, Vector vector) {
   return vector * scaleFactor;
+}
+
+Vector operator*(const Matrix &matrix, const Vector &vector) {
+  assert(matrix.getNumberOfRows() == vector.vector_.size() && !vector.isRowVector_ &&
+    "matrix's row must be equal to entries in column vector");
+  Vector resultVector;
+  resultVector.vector_.resize(vector.vector_.size());
+
+  for (unsigned row = 0; row < matrix.getNumberOfRows(); ++row)
+    for (unsigned col = 0; col < matrix.getNumberOfColumns(); ++col)
+      resultVector.vector_[row] += matrix(row, col) * vector.vector_[col];
+
+  return resultVector;
 }
 
 } // namespace LinearAlgebra
