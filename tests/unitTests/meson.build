@@ -33,3 +33,12 @@ vectorSubtractionTest = executable(
   include_directories: root
 )
 test('vector: vector subtraction', vectorSubtractionTest)
+
+# matrix tests
+scalarMatrixMultiplicationTest = executable(
+  'scalarMatrixMultiplicationTest',
+  'scalarMatrixMultiplicationTest.cpp',
+  link_with: linear_algebra_lib,
+  include_directories: root
+)
+test('matrix: scalar matrix multiplication', scalarMatrixMultiplicationTest)

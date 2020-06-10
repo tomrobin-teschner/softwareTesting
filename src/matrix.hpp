@@ -14,6 +14,8 @@ public:
   Matrix(const MatrixType &inputMatrix);
 
   const double &operator()(int rowIndex, int columnIndex) const;
+  Matrix &operator*(const double &scaleFactor);
+  friend Matrix &operator*(const double &scaleFactor, Matrix &matrix);
 
 private:
   MatrixType matrix_;
