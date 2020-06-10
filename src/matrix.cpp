@@ -15,7 +15,7 @@ Matrix &Matrix::operator*(const double &scaleFactor) {
   return *this;
 }
 
-Matrix &operator*(const double &scaleFactor, Matrix &matrix) {
+Matrix &operator*(const double &scaleFactor, Matrix matrix) {
   return matrix * scaleFactor;
 }
 
