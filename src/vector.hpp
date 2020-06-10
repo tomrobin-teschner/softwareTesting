@@ -20,10 +20,7 @@ public:
 
   const double &operator()(int index) const;
   Vector &operator*(const double &scaleFactor);
-
-  friend Vector &operator*(const double &scaleFactor, Vector vector) {
-    return vector * scaleFactor;
-  }
+  friend Vector &operator*(const double &scaleFactor, Vector vector);
 
 private:
   VectorType vector_;

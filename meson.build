@@ -3,7 +3,7 @@ project(
   'unitTestingForScientificApplications',
   'cpp',
   default_options: 'cpp_std=c++14',
-  version: '0.1.2',
+  version: '0.1.3',
   license: 'MIT'
 )
 

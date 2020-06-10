@@ -38,4 +38,8 @@ Vector &Vector::operator*(const double &scaleFactor) {
   return *this;
 }
 
+Vector &operator*(const double &scaleFactor, Vector vector) {
+  return vector * scaleFactor;
+}
+
 } // namespace LinearAlgebra
