@@ -1,14 +1,20 @@
-# link back to the root directory
-root = '../../'
-
 # vector tests
+
+setVectorValuesTest = executable(
+  'setVectorValuesTest',
+  'setVectorValuesTest.cpp',
+  link_with: linear_algebra_lib,
+  include_directories: root
+)
+test('unit test: set vector values', setVectorValuesTest)
+
 scalarVectorMultiplicationTest = executable(
   'scalarVectorMultiplicationTest',
   'scalarVectorMultiplicationTest.cpp',
   link_with: linear_algebra_lib,
   include_directories: root
 )
-test('vector: scalar vector multiplication', scalarVectorMultiplicationTest)
+test('unit test: scalar vector multiplication', scalarVectorMultiplicationTest)
 
 vectorVectorMultiplicationTest = executable(
   'vectorVectorMultiplicationTest',
@@ -16,7 +22,7 @@ vectorVectorMultiplicationTest = executable(
   link_with: linear_algebra_lib,
   include_directories: root
 )
-test('vector: vector vector multiplication', vectorVectorMultiplicationTest)
+test('unit test: vector vector multiplication', vectorVectorMultiplicationTest)
 
 vectorAdditionTest = executable(
   'vectorAdditionTest',
@@ -24,7 +30,7 @@ vectorAdditionTest = executable(
   link_with: linear_algebra_lib,
   include_directories: root
 )
-test('vector: vector addition', vectorAdditionTest)
+test('unit test: vector addition', vectorAdditionTest)
 
 vectorSubtractionTest = executable(
   'vectorSubtractionTest',
@@ -32,29 +38,22 @@ vectorSubtractionTest = executable(
   link_with: linear_algebra_lib,
   include_directories: root
 )
-test('vector: vector subtraction', vectorSubtractionTest)
+test('unit test: vector subtraction', vectorSubtractionTest)
 
 # matrix tests
+
+setMatrixValuesTest = executable(
+  'setMatrixValuesTest',
+  'setMatrixValuesTest.cpp',
+  link_with: linear_algebra_lib,
+  include_directories: root
+)
+test('unit test: set matrix values', setMatrixValuesTest)
+
 scalarMatrixMultiplicationTest = executable(
   'scalarMatrixMultiplicationTest',
   'scalarMatrixMultiplicationTest.cpp',
   link_with: linear_algebra_lib,
   include_directories: root
 )
-test('matrix: scalar matrix multiplication', scalarMatrixMultiplicationTest)
-
-matrixVectorMultiplicationTest = executable(
-  'matrixVectorMultiplicationTest',
-  'matrixVectorMultiplicationTest.cpp',
-  link_with: linear_algebra_lib,
-  include_directories: root
-)
-test('matrix: matrix vector multiplication', matrixVectorMultiplicationTest)
-
-conjugateGradientTest = executable(
-  'conjugateGradientTest',
-  'conjugateGradientTest.cpp',
-  link_with: linear_algebra_lib,
-  include_directories: root
-)
-test('Conjugate Gradient: solve', conjugateGradientTest)
+test('unit test: scalar matrix multiplication', scalarMatrixMultiplicationTest)
