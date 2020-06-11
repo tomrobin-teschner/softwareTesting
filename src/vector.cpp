@@ -64,6 +64,10 @@ Vector Vector::operator-(const Vector &other) {
   return resultVector;
 }
 
+double &Vector::operator()(int index) {
+  return vector_[index];
+}
+
 const double &Vector::operator()(int index) const {
   return vector_[index];
 }

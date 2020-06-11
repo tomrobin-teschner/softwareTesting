@@ -26,6 +26,7 @@ public:
   double getL2Norm() const;
 
   const double &operator()(int index) const;
+  double &operator()(int index);
   Vector operator+(const Vector &other);
   Vector operator-(const Vector &other);
   Vector &operator*(const double &scaleFactor);

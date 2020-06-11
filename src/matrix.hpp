@@ -13,10 +13,12 @@ public:
   Matrix() = default;
   Matrix(const MatrixType &inputMatrix);
 
+  void setSize(const unsigned &rows, const unsigned &columns);
   unsigned getNumberOfRows() const;
   unsigned getNumberOfColumns() const;
 
   const double &operator()(int rowIndex, int columnIndex) const;
+  double &operator()(int rowIndex, int columnIndex);
   Matrix &operator*(const double &scaleFactor);
   friend Matrix &operator*(const double &scaleFactor, Matrix matrix);
 
