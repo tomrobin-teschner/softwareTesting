@@ -2,8 +2,8 @@
 project(
   'unitTestingForScientificApplications',
   'cpp',
-  default_options: 'cpp_std=c++14',
-  version: '0.3.2',
+  default_options: ['cpp_std=c++14', 'b_coverage=true'],
+  version: '0.3.3',
   license: 'MIT'
 )
 
