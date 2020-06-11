@@ -11,6 +11,7 @@ int main() {
   LinearAlgebra::Vector b({20, 50, 80});
   LinearAlgebra::Vector calculatedRHSVector(3);
   LinearAlgebra::ConjugateGradient CGSolver;
+
   calculatedRHSVector.setConvergenceThresholdForVectorComparison(1e-10);
   CGSolver.setCoefficientMatrix(A);
   CGSolver.setRHSVector(b);
