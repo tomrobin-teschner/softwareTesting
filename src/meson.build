@@ -4,7 +4,8 @@ root = '../'
 # add source files
 cppSourceFiles = [
   'vector.cpp',
-  'matrix.cpp'
+  'matrix.cpp',
+  'conjugateGradient.cpp'
 ]
 
 # create static library of all cppSourceFiles which allows to easily include them in tests

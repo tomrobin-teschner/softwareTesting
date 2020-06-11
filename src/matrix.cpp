@@ -1,4 +1,5 @@
 #include <cassert>
+#include <cmath>
 
 #include "src/matrix.hpp"
 

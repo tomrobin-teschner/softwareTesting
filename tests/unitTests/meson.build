@@ -50,3 +50,11 @@ matrixVectorMultiplicationTest = executable(
   include_directories: root
 )
 test('matrix: matrix vector multiplication', matrixVectorMultiplicationTest)
+
+conjugateGradientTest = executable(
+  'conjugateGradientTest',
+  'conjugateGradientTest.cpp',
+  link_with: linear_algebra_lib,
+  include_directories: root
+)
+test('Conjugate Gradient: solve', conjugateGradientTest)
