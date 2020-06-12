@@ -7,8 +7,8 @@
 
 int main() {
   // Arrange
-  LinearAlgebra::Matrix A({{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
-  LinearAlgebra::Vector b({20, 50, 80});
+  LinearAlgebra::Matrix A({{1, 0, 0}, {0, 1, 0}, {0, 0, 1}});
+  LinearAlgebra::Vector b({4, -2, 1});
   LinearAlgebra::Vector calculatedRHSVector(3);
   LinearAlgebra::ConjugateGradient CGSolver;
 
