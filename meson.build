@@ -1,9 +1,9 @@
 # basic project settings, used each time when we configure a project
 project(
-  'unitTestingForScientificApplications',
+  'softwareTesting',
   'cpp',
   default_options: ['cpp_std=c++14', 'b_coverage=true'],
-  version: '0.3.3',
+  version: '0.3.4',
   license: 'MIT'
 )
 
