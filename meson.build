@@ -3,7 +3,7 @@ project(
   'softwareTesting',
   'cpp',
   default_options: ['cpp_std=c++14', 'b_coverage=true'],
-  version: '0.3.4',
+  version: '0.3.5',
   license: 'MIT'
 )
 
