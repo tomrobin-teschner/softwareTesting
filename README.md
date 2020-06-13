@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3892227.svg)](https://doi.org/10.5281/zenodo.3892227)
+
 # Introduction
 
 This project is intended as an example project highlighting a possible folder structure to set up unit, integration and system tests. For this demonstration, a simplistic linear algebra package is developed which consists of a vector and matrix class. From these two classes, a conjugate gradient class is created to solve a linear system of equations. To demonstrate the usage, a system test is provided for the solution of a 1D heat equation, solved implicitly.
