@@ -22,8 +22,6 @@ LinearAlgebra::Vector ConjugateGradient::solve(const unsigned &maxIterations, co
   double alpha = 0.0;
   double beta = 0.0;
   unsigned iteration = 0;
-  double L2Norm = 0.0;
-  double previousL2Norm = 0.0;
   double residual = 0.0;
 
   d1 = b - A * x;
@@ -39,22 +37,23 @@ LinearAlgebra::Vector ConjugateGradient::solve(const unsigned &maxIterations, co
     beta = (r1.transpose() * r1) / (r0.transpose() * r0);
     d1 = r1 + beta * d0;
 
-    residual = calculateResidual(iteration, x, L2Norm, previousL2Norm);
+    residual = calculateResidual(iteration);
     ++iteration;
   } while (iteration < maxIterations && residual > convergenceThreshold);
 
   return solutionVector_;
 }
 
-double ConjugateGradient::calculateResidual(
-  const unsigned &iteration, const LinearAlgebra::Vector &solution, double &L2Norm, double &previousL2Norm) const {
-  static double norm = 0.0;
-  previousL2Norm = L2Norm;
-  L2Norm = solution.getL2Norm();
-  if (iteration == 0)
-    norm = L2Norm;
-  L2Norm /= norm;
-  return std::fabs(L2Norm - previousL2Norm);
+double ConjugateGradient::calculateResidual(const unsigned &iteration) {
+  auto &A = coefficientMatrix_;
+  auto &b = rhsVector_;
+  auto &x = solutionVector_;
+
+  static double norm = 1.0;
+  double residual = (b - A * x).getL2Norm();
+  if (iteration == 0 && residual != 0.0)
+    norm = residual;
+  return residual / norm;
 }
 
 } // namespace LinearAlgebra

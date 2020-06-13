@@ -14,8 +14,7 @@ public:
   LinearAlgebra::Vector solve(const unsigned &maxIterations = 1000, const double &convergenceThreshold = 1e-6);
 
 private:
-  double calculateResidual(
-    const unsigned &iteration, const LinearAlgebra::Vector &solution, double &L2Norm, double &previousL2Norm) const;
+  double calculateResidual(const unsigned &iteration);
 
 private:
   LinearAlgebra::Matrix coefficientMatrix_;
